@@ -41,16 +41,40 @@ export class AppComponent {
   questionsOfwords = [];
   wordsArray = [
     {
-      wordA: 'guuni',
-      wordB: 'golu'
+      wordA: 'pair',
+      wordB: 'good'
     },
     {
-      wordA: 'dholu',
-      wordB: 'molu'
+      wordA: 'table',
+      wordB: 'glass'
     },
     {
-      wordA: 'madar',
-      wordB: 'chod'
+      wordA: 'book',
+      wordB: 'dance'
+    },
+    {
+      wordA: 'footwear',
+      wordB: 'bag'
+    },
+    {
+      wordA: 'bottle',
+      wordB: 'pin'
+    },
+    {
+      wordA: 'door',
+      wordB: 'knee'
+    },
+    {
+      wordA: 'window',
+      wordB: 'tea'
+    },
+    {
+      wordA: 'suitcase',
+      wordB: 'place'
+    },
+    {
+      wordA: 'shirt',
+      wordB: 'watch'
     },
 
   ];
@@ -131,20 +155,20 @@ export class AppComponent {
       //   this.orderOfword = []
       //   this.questionsOfwords = []
       // }
-      // const result = Math.round((this.correcCount / this.cognitive.wordPairs.length) * 100)
+      const result = Math.round((this.correcCount / 9) * 100)
       // if(result >= this.cognitive.passPercentage || this.roundData.length === this.cognitive.totalNumberroundswordPair){
       //   this.isShowNextRound = false;
-      //   this.saveTestRespose();
+      //   //this.saveTestRespose();
       //   setTimeout(() => {
-      //     this.dismissModal();
+      //     //this.dismissModal();
       //     }, 2000);
       // }else{
       //   this.isShowNextRound = true
       // }
-      // this.counterSubject.next({ pause: true});
-      // this.counterSubject.next({ counterValue: 0});
-      // this.userAnswerSubject.next({ pause: true});
-      // this.userAnswerSubject.next({ userAnswercounterValue: 0});
+      this.counterSubject.next({ pause: true});
+      this.counterSubject.next({ counterValue: 0});
+      this.userAnswerSubject.next({ pause: true});
+      this.userAnswerSubject.next({ userAnswercounterValue: 0});
     }else{
       this.userAnswerSubject.next({pause: false});
       this.testBlockState = TestBLockEnum.FILLPAIRWORD;
@@ -206,6 +230,7 @@ export class AppComponent {
       answer: this.secondWordPair.value,
       ansResult: this.pairAnswer,
     });
+    console.log(this.questionsOfwords);
     this.secondWordPair.reset();
     this.testBlockState = TestBLockEnum.ANSWERRESPONSE;
     // this.userAnswerSubject.next({ pause: true});

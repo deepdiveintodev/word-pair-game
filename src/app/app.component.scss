@@ -54,3 +54,31 @@ $white: #fff;
     }
 
 }
+
+.main-box {
+  width: 52%;
+    background: #ededed;
+    color: $black;
+    padding: 2rem 4rem;
+    text-align: center;
+    margin: 0 auto;
+  button {
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    background: $black;
+    color:$white;
+  }
+}
+
+.word-pair-text {
+  font-size: 1.2rem;
+}
+
+.success-text {
+  color: green;
+}
+
+.danger-text {
+  color: red;
+}

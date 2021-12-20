@@ -3,7 +3,7 @@
   <ng-container [ngSwitch]="testBlockState">
       <ng-container *ngSwitchCase="testBLockEnum.INSTRUCTIONBOX">
           <div class="instructionvox center-aligned text-center">
-              <h2 class="test-title">
+              <h2 class="test-title" style="margin: 0;">
                   Word Pair Test
               </h2>
               <p>
@@ -31,19 +31,19 @@
       <ng-container *ngSwitchCase="testBLockEnum.SHOWPAIRWORD">
           <div class="center-aligned">
               <ng-container *ngIf="firstPairWord">
-                  <h4>
+                  <h4 class="word-pair-text" style="text-align: left;">
                       {{ wordPairTextValue.wordA }}
                   </h4>
               </ng-container>
               <ng-container *ngIf="!firstPairWord">
-                  <h4 style="text-align: right;">
+                  <h4 style="text-align: right;" class="word-pair-text">
                       {{ wordPairTextValue.wordB }}
                   </h4>
               </ng-container>
           </div>
       </ng-container>
-      <ng-container *ngSwitchCase="testBLockEnum.BLANKSCREEN">
-      </ng-container>
+      <!-- <ng-container *ngSwitchCase="testBLockEnum.BLANKSCREEN">
+      </ng-container> -->
       <ng-container  *ngSwitchCase="testBLockEnum.FILLPAIRWORD">
           <div class="center-aligned enter-word-block">
               <h3 style="margin-bottom: 2rem;">
