@@ -20,8 +20,6 @@ enum TestBLockEnum {
   styleUrls: ['./app.component.scss']
 })
 
-
-
 export class AppComponent {
   title = 'rxjs-tutorial';
   secondWordPair = new FormControl('');
@@ -95,7 +93,6 @@ export class AppComponent {
     this.wordPairArray = [...this.wordsArray];
     this.ansArray = [...this.wordsArray];
     console.log(this.wordPairArray);
-
   }
 
   public initializeCounter() {
@@ -119,7 +116,6 @@ export class AppComponent {
         this.testBlockState = TestBLockEnum.BLANKSCREEN;
         setTimeout(() => {
           if(this.wordPairArray.length === 0){
-            console.log('Sab Khatam');
             this.counterSubject.next({pause: true});
             this.secondRound();
           }else{
@@ -180,7 +176,6 @@ export class AppComponent {
 
   public startTest(): void{
     this.getIndexUpdateArray();
-    console.log('Hello');
     this.startCounter();
   }
 
@@ -216,26 +211,19 @@ export class AppComponent {
   public submitPairValue(): void {
 
     let formValue = this.secondWordPair.value.toLowerCase();
-    console.log(formValue);
     if(formValue === this.ansValueText.wordB) {
-      console.log('shi');
       this.pairAnswer = "Correct";
       this.correcCount ++;
     }else{
       this.pairAnswer = "Incorrect";
-      console.log('Galat');
     }
     this.questionsOfwords.push({
       question: this.ansValueText.wordB,
       answer: this.secondWordPair.value,
       ansResult: this.pairAnswer,
     });
-    console.log(this.questionsOfwords);
     this.secondWordPair.reset();
     this.testBlockState = TestBLockEnum.ANSWERRESPONSE;
-    // this.userAnswerSubject.next({ pause: true});
-    // this.userAnswerSubject.next({ userAnswercounterValue: 0});
-    // this.userAnswerSubject.next({ pause: false});
     setTimeout(() => {
       this.secondRound();
     }, 2000);
